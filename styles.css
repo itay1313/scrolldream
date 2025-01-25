@@ -4,51 +4,59 @@
     box-sizing: border-box;
 }
 
+/* Base styles for all wrappers and content */
 .wrapper,
-.content {
+.wrapper-story,
+.wrapper-third,
+.wrapper-fourth {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+}
+
+.content,
+.content-story,
+.content-third,
+.content-fourth {
     position: relative;
     width: 100%;
     z-index: 1;
-}
-
-.content {
     overflow-x: hidden;
 }
 
-.content .section {
+/* Section styles */
+.content .section,
+.content-story .section,
+.content-third .section,
+.content-fourth .section {
     width: 100%;
     height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
-.content .section.hero {
-    background-image: url(bg.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+/* Video styles for all sections */
+.hero-video,
+.story-video,
+.third-video,
+.fourth-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 
-.content .section.second-slide {
-    background-image: url(bg.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.content .section.story {
-    background-image: url(bg2.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.content .section.story-second-slide {
-    background-image: url(bg2.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.image-container {
+/* Image container styles for all sections */
+.image-container,
+.image-container-story,
+.image-container-third,
+.image-container-fourth {
     width: 100%;
     height: 100vh;
     position: absolute;
@@ -58,30 +66,66 @@
     z-index: 2;
     perspective: 500px;
     overflow: hidden;
+    pointer-events: none;
 }
 
-.image-container img {
+/* Image styles for all sections */
+.image-container img,
+.image-container-story img,
+.image-container-third img,
+.image-container-fourth img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center center;
+    transition: opacity 0.5s ease;
 }
 
-.image-container-story {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 200vh;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    perspective: 500px;
+/* Hero and slide backgrounds */
+.content .section.hero,
+.content .section.second-slide {
+    background-image: url(./images/bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Story section styles */
+.content-story .section.story {
+    position: relative;
     overflow: hidden;
 }
 
-.image-container-story img {
+.content-story .section.story-second-slide {
+    background-image: url(./images/bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.image-container video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Remove the previous transition styles we added */
+.image-container img,
+.image-container-story img,
+.image-container-third img,
+.image-container-fourth img,
+.hero-video,
+.story-video,
+.third-video,
+.fourth-video {
+    transition: opacity 0.5s ease;
 } 
