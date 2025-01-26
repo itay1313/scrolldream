@@ -17,6 +17,20 @@
     transition: opacity 0.5s ease;
 }
 
+.social-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #fff;
+    a {
+        color: #fff;
+    }
+}
+
 .content,
 .content-story,
 .content-third,
@@ -128,4 +142,55 @@ body {
 .third-video,
 .fourth-video {
     transition: opacity 0.5s ease;
+}
+
+.social-buttons img {
+    width: 24px;
+    height: 24px;
+    fill: #fff; /* or any color you want */
+    transition: fill 0.3s ease;
+}
+
+.social-buttons img:hover {
+    fill: #e4405f; /* Instagram brand color */
+}
+
+.scroll-instruction {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-instruction.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scroll-instruction p {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.scroll-arrow {
+    font-size: 24px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(10px);
+    }
+    60% {
+        transform: translateY(5px);
+    }
 } 

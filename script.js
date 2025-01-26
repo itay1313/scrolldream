@@ -70,6 +70,14 @@ window.addEventListener("load", () => {
       );
   };
 
+  // Add this at the beginning of your script
+  window.addEventListener('load', function () {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'instant' // This will scroll instantly without animation
+    });
+  });
+
   // Add smooth scroll
   gsap.to(window, {
     duration: 0.7,
@@ -77,6 +85,17 @@ window.addEventListener("load", () => {
       y: "max",
       autoKill: true,
       ease: "power2.inOut"
+    }
+  });
+
+  // Add scroll event listener to hide instruction
+  const scrollInstruction = document.querySelector('.scroll-instruction');
+  let isFirstScroll = true;
+
+  window.addEventListener('scroll', () => {
+    if (isFirstScroll && window.scrollY > 50) {
+      scrollInstruction.classList.add('hidden');
+      isFirstScroll = false;
     }
   });
 
