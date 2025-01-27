@@ -1,11 +1,11 @@
-# Creative Developer Portfolio
+# Creative Team Member Showcase
 
-A dynamic, scroll-based portfolio website featuring immersive video transitions and parallax effects. Built with GSAP and modern web technologies.
+A dynamic, scroll-based team member showcase featuring immersive video transitions and parallax effects. Built with GSAP and modern web technologies.
 
 ## Features
 
 - Smooth scroll-triggered animations
-- Video background transitions
+- Video background transitions for each team member
 - Parallax image effects
 - Responsive design
 - Social media integration
@@ -23,7 +23,7 @@ A dynamic, scroll-based portfolio website featuring immersive video transitions 
 
 ## Live Demo
 
-Visit [itaycode.com](https://itaycode.com) to see the live version of this portfolio.
+Visit [scrolldream.vercel.app](https://scrolldream.vercel.app/) to see the live version of this team showcase.
 
 ## Contact
 
